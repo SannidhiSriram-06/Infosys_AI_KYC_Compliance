@@ -1,0 +1,108 @@
+.register-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-card {
+  background: #ffffff;
+  padding: 40px;
+  width: 380px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.register-card h2 {
+  color: #1e3c72;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-group input:focus {
+  border-color: #2563eb;
+}
+
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #6b7280;
+  background: white;
+  padding: 0 6px;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -6px;
+  font-size: 11px;
+  color: #2563eb;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.register-btn:hover {
+  background: #1d4ed8;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.extra-links {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.extra-links a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
