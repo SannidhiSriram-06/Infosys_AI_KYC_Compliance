@@ -1,0 +1,108 @@
+.home-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 230px;
+  background-color: #0f172a;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin-bottom: 25px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.side-btn {
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1e293b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.side-btn:hover {
+  background-color: #334155;
+}
+
+.side-btn.active {
+  background-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.logout-btn {
+  margin-top: auto;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+.main-section {
+  flex: 1;
+  padding: 40px;
+  background: linear-gradient(to right, #f8fafc, #eef2ff);
+}
+
+.ocr-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 650px;
+}
+
+.ocr-btn {
+  margin-top: 15px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #2563eb, #1e40af);
+  color: white;
+  cursor: pointer;
+  box-shadow: 6px 6px 12px rgba(0,0,0,0.15),
+              -4px -4px 10px rgba(255,255,255,0.2);
+  transition: all 0.2s ease;
+}
+
+.ocr-btn:active {
+  transform: translateY(2px);
+  box-shadow: inset 4px 4px 8px rgba(0,0,0,0.2);
+}
+
+.file-name {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e0f2fe;
+  border-radius: 8px;
+}
+
+.account-item {
+  margin: 10px 0;
+}
+
+.chat-entry {
+  background: #f1f5f9;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+pre {
+  white-space: pre-wrap;
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Login.css";
-
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -9,6 +9,7 @@ function Login() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -19,7 +20,23 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login Data:", formData);
+
+    const storedUser = JSON.parse(localStorage.getItem("kycUser"));
+
+    if (!storedUser) {
+      alert("No registered user found. Please register first.");
+      return;
+    }
+
+    if (
+      formData.email === storedUser.email &&
+      formData.password === storedUser.password
+    ) {
+      localStorage.setItem("isLoggedIn", "true");
+      navigate("/home");
+    } else {
+      alert("Invalid Credentials");
+    }
   };
 
   return (
@@ -63,9 +80,8 @@ function Login() {
         </form>
 
         <div className="extra-links">
-          <a href="#">Forgot Password?</a>
-         <a href="/register">Create Account</a>
-
+          <a href="/forgot-password">Forgot Password?</a>
+          <a href="/register">Create Account</a>
         </div>
       </div>
     </div>
