@@ -1,34 +1,32 @@
-import "./Home.css";
-
 function Sidebar({ activeSection, setActiveSection, handleLogout }) {
   return (
     <div className="sidebar">
       <h3 className="logo">AI-KYC</h3>
 
-      <button
-        className={`side-btn ${activeSection === "ocr" ? "active" : ""}`}
+      <div
+        className={`menu-item ${activeSection === "ocr" ? "active" : ""}`}
         onClick={() => setActiveSection("ocr")}
       >
-        OCR Dashboard
-      </button>
+        OCR Upload
+      </div>
 
-      <button
-        className={`side-btn ${activeSection === "account" ? "active" : ""}`}
+      <div
+        className={`menu-item ${activeSection === "account" ? "active" : ""}`}
         onClick={() => setActiveSection("account")}
       >
         Account Management
-      </button>
+      </div>
 
-      <button
-        className={`side-btn ${activeSection === "chat" ? "active" : ""}`}
+      <div
+        className={`menu-item ${activeSection === "chat" ? "active" : ""}`}
         onClick={() => setActiveSection("chat")}
       >
         Chat History
-      </button>
+      </div>
 
-      <button className="logout-btn" onClick={handleLogout}>
+      <div className="menu-item logout" onClick={handleLogout}>
         Logout
-      </button>
+      </div>
     </div>
   );
 }

@@ -38,6 +38,18 @@ function Home() {
     navigate("/");
   };
 
+  const handleDeleteAccount = () => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this account?"
+    );
+
+    if (confirmDelete) {
+      localStorage.removeItem("kycUser");
+      localStorage.removeItem("isLoggedIn");
+      navigate("/");
+    }
+  };
+
   return (
     <div className="home-container">
       <Sidebar
@@ -50,7 +62,7 @@ function Home() {
 
         {/* OCR SECTION */}
         {activeSection === "ocr" && (
-          <div className="ocr-card">
+          <div className="card">
             <h2>OCR Document Upload</h2>
 
             <input type="file" onChange={handleFileChange} />
@@ -62,7 +74,7 @@ function Home() {
             )}
 
             <button
-              className="ocr-btn"
+              className="primary-btn"
               onClick={handleOCR}
               disabled={loading}
             >
@@ -80,7 +92,7 @@ function Home() {
 
         {/* ACCOUNT MANAGEMENT */}
         {activeSection === "account" && (
-          <div className="ocr-card">
+          <div className="card">
             <h2>Account Management</h2>
 
             {storedUser ? (
@@ -96,6 +108,13 @@ function Home() {
                 <div className="account-item">
                   <strong>Role:</strong> Compliance Officer
                 </div>
+
+                <button
+                  className="delete-btn"
+                  onClick={handleDeleteAccount}
+                >
+                  Delete Account
+                </button>
               </>
             ) : (
               <p>No user data available.</p>
@@ -105,7 +124,7 @@ function Home() {
 
         {/* CHAT HISTORY */}
         {activeSection === "chat" && (
-          <div className="ocr-card">
+          <div className="card">
             <h2>Chat History</h2>
             <p>No OCR records yet.</p>
           </div>

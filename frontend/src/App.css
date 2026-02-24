@@ -1,7 +1,5 @@
-/* Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,19 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Body */
-body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f4f7fb, #e9eff8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Root Wrapper */
 #root {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
 }
