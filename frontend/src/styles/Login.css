@@ -1,107 +1,68 @@
 .login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
+  background: linear-gradient(135deg, #e0f2ff, #f0f9ff);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Card */
 .login-card {
-  background: #ffffff;
+  background: white;
   padding: 40px;
+  border-radius: 12px;
   width: 360px;
-  border-radius: 14px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-/* Heading */
-.login-card h2 {
-  color: #1e3c72;
-  margin-bottom: 8px;
-  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .subtitle {
+  margin-bottom: 20px;
+  color: #555;
   font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 28px;
 }
 
-/* Input Group */
 .input-group {
+  margin-bottom: 20px;
   position: relative;
-  margin-bottom: 22px;
 }
 
 .input-group input {
   width: 100%;
-  padding: 14px 12px;
-  border-radius: 8px;
+  padding: 10px 12px;
   border: 1px solid #d1d5db;
-  outline: none;
+  border-radius: 6px;
   font-size: 14px;
-  transition: border 0.3s;
 }
 
-.input-group input:focus {
-  border-color: #2563eb;
-}
-
-/* Floating Label */
-.input-group label {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 13px;
-  color: #6b7280;
-  background: white;
-  padding: 0 6px;
-  pointer-events: none;
-  transition: 0.3s;
-}
-
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
-  top: -6px;
-  font-size: 11px;
-  color: #2563eb;
-}
-
-/* Show Password */
 .toggle-password {
   position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 10px;
+  top: 10px;
   font-size: 12px;
   color: #2563eb;
   cursor: pointer;
 }
 
-/* Button */
 .login-btn {
   width: 100%;
-  padding: 14px;
+  padding: 10px;
+  background-color: #2563eb;
+  color: white;
   border: none;
-  border-radius: 8px;
-  background: #2563eb;
-  color: #ffffff;
-  font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s, box-shadow 0.3s;
+  font-weight: 500;
 }
 
 .login-btn:hover {
-  background: #1d4ed8;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  background-color: #1d4ed8;
 }
 
-/* Extra Links */
 .extra-links {
-  margin-top: 18px;
+  margin-top: 15px;
   display: flex;
   justify-content: space-between;
   font-size: 13px;
@@ -114,16 +75,4 @@
 
 .extra-links a:hover {
   text-decoration: underline;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

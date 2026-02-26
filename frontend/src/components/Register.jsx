@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Register.css";
 
 function Register() {
@@ -8,6 +9,8 @@ function Register() {
     password: "",
     confirmPassword: ""
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -24,8 +27,24 @@ function Register() {
       return;
     }
 
-    console.log("Register Data:", formData);
+    const existingUser = localStorage.getItem("kycUser");
+
+    if (existingUser) {
+      alert("User already exists. Please login.");
+      navigate("/");
+      return;
+    }
+
+    const newUser = {
+      name: formData.name,
+      email: formData.email,
+      password: formData.password
+    };
+
+    localStorage.setItem("kycUser", JSON.stringify(newUser));
+
     alert("Account created successfully!");
+    navigate("/");
   };
 
   return (
