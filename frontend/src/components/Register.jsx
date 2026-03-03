@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // 1. Import useNavigate
 import "../styles/Register.css";
 
 function Register() {
@@ -8,6 +9,8 @@ function Register() {
     password: "",
     confirmPassword: ""
   });
+
+  const navigate = useNavigate(); // 2. Initialize navigate
 
   const handleChange = (e) => {
     setFormData({
@@ -26,6 +29,9 @@ function Register() {
 
     console.log("Register Data:", formData);
     alert("Account created successfully!");
+    
+    // 3. Redirect to the Login page after registering
+    navigate("/"); 
   };
 
   return (

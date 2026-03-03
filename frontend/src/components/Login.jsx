@@ -1,14 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // 1. Import useNavigate
 import "../styles/Login.css";
-
 
 function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
-
+  
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate(); // 2. Initialize navigate
 
   const handleChange = (e) => {
     setFormData({
@@ -20,6 +21,9 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Login Data:", formData);
+    
+    // 3. Navigate to the Upload page after successful login
+    navigate("/upload"); 
   };
 
   return (
@@ -64,8 +68,7 @@ function Login() {
 
         <div className="extra-links">
           <a href="#">Forgot Password?</a>
-         <a href="/register">Create Account</a>
-
+          <a href="/register">Create Account</a>
         </div>
       </div>
     </div>
